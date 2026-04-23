@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurum — Premium Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-logo">A</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">Aurum</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Services</a>
+        <a href="#dashboard" class="nav-link">Dashboard</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <a href="#contact" class="btn btn-gold">Get Started</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#features" class="mobile-nav-link">Services</a>
+      <a href="#dashboard" class="mobile-nav-link">Dashboard</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="noise"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> Premium Analytics Platform</div>
+        <h1 class="hero-title">
+          Elevate Your<br/>
+          <em>Business Intelligence</em>
+        </h1>
+        <p class="hero-sub">
+          Aurum transforms raw data into actionable insight with precision-crafted
+          dashboards and real-time analytics built for discerning professionals.
+        </p>
+        <div class="hero-cta">
+          <a href="#dashboard" class="btn btn-gold btn-large">
+            Explore Dashboard <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#features" class="btn btn-ghost btn-large">View Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-target="98">0</span><span>%</span><small>Uptime</small></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-target="12">0</span><span>k+</span><small>Clients</small></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-target="4">0</span><span>x</span><small>Faster Insights</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <div class="fc-label"><i class="fas fa-chart-line"></i> Revenue</div>
+          <div class="fc-value">$2.4M</div>
+          <div class="fc-change positive"><i class="fas fa-arrow-up"></i> 18.2%</div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="fc-label"><i class="fas fa-users"></i> Active Users</div>
+          <div class="fc-value">84,291</div>
+          <div class="fc-change positive"><i class="fas fa-arrow-up"></i> 6.7%</div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="fc-label"><i class="fas fa-shield-alt"></i> Security Score</div>
+          <div class="fc-value">99.8</div>
+          <div class="fc-change"><i class="fas fa-check"></i> Excellent</div>
+        </div>
+        <div class="hero-chart-container">
+          <canvas id="heroChart"></canvas>
+        </div>
+      </div>
+      <a href="#features" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">What We Offer</div>
+          <h2>Precision-Crafted<br/><em>Services</em></h2>
+          <p>Every feature designed to give you an unfair advantage in understanding your data.</p>
+        </div>
+        <div class="features-grid">
+
+          <div class="feature-card" data-aos>
+            <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
+            <h3>Real-Time Analytics</h3>
+            <p>Monitor KPIs the moment they shift. Live data streams rendered beautifully across every device.</p>
+            <div class="feature-tag">Core</div>
+          </div>
+
+          <div class="feature-card featured" data-aos>
+            <div class="feature-icon"><i class="fas fa-brain"></i></div>
+            <h3>AI-Powered Insights</h3>
+            <p>Machine learning surfaces patterns your team would take weeks to find — in seconds.</p>
+            <div class="feature-tag">Premium</div>
+          </div>
+
+          <div class="feature-card" data-aos>
+            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+            <h3>Enterprise Security</h3>
+            <p>SOC 2 Type II certified. End-to-end encryption. Role-based access. Zero compromises.</p>
+            <div class="feature-tag">Core</div>
+          </div>
+
+          <div class="feature-card" data-aos>
+            <div class="feature-icon"><i class="fas fa-plug"></i></div>
+            <h3>200+ Integrations</h3>
+            <p>Connect Salesforce, HubSpot, Stripe, PostgreSQL, and more in one click.</p>
+            <div class="feature-tag">Core</div>
+          </div>
+
+          <div class="feature-card" data-aos>
+            <div class="feature-icon"><i class="fas fa-file-export"></i></div>
+            <h3>Custom Reports</h3>
+            <p>White-label PDF and Excel exports, scheduled delivery, and branded dashboards for clients.</p>
+            <div class="feature-tag">Pro</div>
+          </div>
+
+          <div class="feature-card" data-aos>
+            <div class="feature-icon"><i class="fas fa-bell"></i></div>
+            <h3>Smart Alerts</h3>
+            <p>Anomaly detection and threshold alerts delivered via Slack, email, or SMS the instant they trigger.</p>
+            <div class="feature-tag">Pro</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD SECTION -->
+    <section class="dashboard" id="dashboard">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Live Dashboard</div>
+          <h2>Your Data,<br/><em>Visualised</em></h2>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+            <div class="kpi-body">
+              <div class="kpi-label">Monthly Revenue</div>
+              <div class="kpi-value">$248,590</div>
+              <div class="kpi-delta positive"><i class="fas fa-arrow-up"></i> 12.4% vs last month</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fas fa-cart-shopping"></i></div>
+            <div class="kpi-body">
+              <div class="kpi-label">Orders</div>
+              <div class="kpi-value">3,847</div>
+              <div class="kpi-delta positive"><i class="fas fa-arrow-up"></i> 8.1% vs last month</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fas fa-user-plus"></i></div>
+            <div class="kpi-body">
+              <div class="kpi-label">New Clients</div>
+              <div class="kpi-value">1,209</div>
+              <div class="kpi-delta negative"><i class="fas fa-arrow-down"></i> 2.3% vs last month</div>
+            </div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fas fa-star"></i></div>
+            <div class="kpi-body">
+              <div class="kpi-label">Satisfaction</div>
+              <div class="kpi-value">4.92 / 5</div>
+              <div class="kpi-delta positive"><i class="fas fa-arrow-up"></i> 0.08 vs last month</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="charts-row">
+          <div class="chart-card large">
+            <div class="chart-header">
+              <h4>Revenue Over Time</h4>
+              <div class="chart-tabs">
+                <button class="chart-tab active" data-period="week">Week</button>
+                <button class="chart-tab" data-period="month">Month</button>
+                <button class="chart-tab" data-period="year">Year</button>
+              </div>
+            </div>
+            <canvas id="revenueChart"></canvas>
+          </div>
+          <div class="chart-card small">
+            <div class="chart-header"><h4>Traffic Sources</h4></div>
+            <canvas id="donutChart"></canvas>
+            <div class="donut-legend" id="donutLegend"></div>
+          </div>
+        </div>
+
+        <!-- Search & Table -->
+        <div class="table-section">
+          <div class="table-header">
+            <h4>Recent Transactions</h4>
+            <div class="table-controls">
+              <div class="search-wrap">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search transactions…" />
+              </div>
+              <select id="filterStatus">
+                <option value="all">All Status</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+                <option value="failed">Failed</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="transactionTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Client</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+          </div>
+          <div class="table-pagination">
+            <button id="prevPage" class="page-btn"><i class="fas fa-chevron-left"></i></button>
+            <span id="pageInfo">Page 1 of 1</span>
+            <button id="nextPage" class="page-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="section-tag">Get In Touch</div>
+            <h2>Start Your<br/><em>Journey</em></h2>
+            <p>Tell us about your data challenges. Our team will craft a bespoke solution within 24 hours.</p>
+            <div class="contact-details">
+              <div class="contact-item"><i class="fas fa-envelope"></i> hello@aurum.io</div>
+              <div class="contact-item"><i class="fas fa-phone"></i> +1 (800) 287-6843</div>
+              <div class="contact-item"><i class="fas fa-location-dot"></i> New York · London · Singapore</div>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" placeholder="Alex" />
+                  <span class="form-error" id="fnameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" placeholder="Morgan" />
+                  <span class="form-error" id="lnameError"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="alex@company.com" />
+                <span class="form-error" id="emailError"></span>
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" placeholder="Acme Corp" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Tell us about your project…"></textarea>
+                <span class="form-error" id="messageError"></span>
+              </div>
+              <button type="submit" class="btn btn-gold btn-large btn-full" id="submitBtn">
+                <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+              </button>
+              <div class="form-success" id="formSuccess">
+                <i class="fas fa-check-circle"></i> Message sent! We'll be in touch within 24 hours.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><span class="logo-mark">A</span><span class="logo-text">Aurum</span></a>
+          <p>Precision analytics for the world's most ambitious teams.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Product</h5>
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Changelog</a>
+          <a href="#">Roadmap</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Aurum Analytics Inc. All rights reserved.</span>
+        <span>Crafted with <i class="fas fa-heart" style="color:var(--gold)"></i> for data lovers</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
